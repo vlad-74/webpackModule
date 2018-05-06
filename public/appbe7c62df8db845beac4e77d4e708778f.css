@@ -1,0 +1,13 @@
+.table,
+.tr,
+.th,
+.td {
+  border: 1px solid;
+}
+.table .td,
+.tr .td,
+.th .td,
+.td .td {
+  text-align: center;
+  padding: 0 5px;
+}

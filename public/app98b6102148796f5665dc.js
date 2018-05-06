@@ -75,7 +75,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({}[chunkId]||chunkId) + "" + {"1":"b093b7a1ad314d2df45e"}[chunkId] + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({}[chunkId]||chunkId) + "" + {"1":"255638f327a5ff01aa74"}[chunkId] + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -99,28 +99,25 @@
 
 	'use strict';
 
+	var _data = __webpack_require__(1);
+
+	var _data2 = _interopRequireDefault(_data);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var titleHTML = "WEBPACK & MODULE";
+
 	__webpack_require__.e/* nsure */(1, function (require) {
-
-	  var titleHTML = "ЗАГОЛОВОК";
-
-	  var Menu = __webpack_require__(1).default;
-
-	  var pandaMenu = new Menu({
-	    title: "Меню панды",
-	    items: [{
-	      text: 'Яйца',
-	      href: '#eggs'
-	    }, {
-	      text: 'Мясо!!!!!',
-	      href: '#meat'
-	    }, {
-	      text: '99% еды - бамбук!',
-	      href: '#bamboo'
-	    }]
-	  });
-
-	  document.body.appendChild(pandaMenu.elem);
+	    var Table = __webpack_require__(2).default;
+	    var tableMy = new Table(_data2.default);
+	    document.body.appendChild(tableMy.elem);
 	});
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+	module.exports = {"header":["№","ID","Фамиля","Имя","Возраст"],"rows":[{"id":10,"ln":"Иванов","fn":"Иван","age":"20"},{"id":11,"ln":"Петров","fn":"Иван","age":"30"},{"id":12,"ln":"Сидоров","fn":"Иван","age":"40"},{"id":13,"ln":"Лохопетов","fn":"Иван","age":"50"}]}
 
 /***/ })
 /******/ ]);

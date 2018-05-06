@@ -36,12 +36,15 @@ if (NODE_ENV == 'devser') {
         loader:  "babel?presets[]=es2015"
       }, {
         test: /\.json$/,
+        exclude: /node_modules/,
         loader: 'json-loader'
       }, {
         test:   /\.jade$/,
+        exclude: /node_modules/,
         loader: "jade"
       }, {
         test:   /\.styl$/,
+        exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style', 'css!stylus?resolve url')
       }, {
         test:   /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
@@ -51,7 +54,7 @@ if (NODE_ENV == 'devser') {
     },
 
     plugins: [
-      new ExtractTextPlugin('[name].css', {allChunks: true, disable: false})
+      new ExtractTextPlugin('[name].css', {allChunks: true, disable: false}),
     ],
 
     devServer: {
@@ -81,12 +84,15 @@ if (NODE_ENV == 'devser') {
         loader:  "babel?presets[]=es2015"
       },{
         test: /\.json$/,
+        exclude: /node_modules/,
         loader: 'json-loader'
       },{
         test:   /\.jade$/,
+        exclude: /node_modules/,
         loader: "jade"
       }, {
         test:   /\.styl$/,
+        exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style', 'css!stylus?resolve url'),
       }, {
         test:   /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,

@@ -1,92 +1,103 @@
 webpackJsonp([1],[
 /* 0 */,
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
-	__webpack_require__(2);
+	__webpack_require__(3);
 
-	var _menu = __webpack_require__(3);
+	var _table = __webpack_require__(4);
 
-	var _menu2 = _interopRequireDefault(_menu);
+	var _table2 = _interopRequireDefault(_table);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var Menu = function Menu(options) {
-	    var _this = this;
+	var Table = function Table(options) {
+	  _classCallCheck(this, Table);
 
-	    _classCallCheck(this, Menu);
-
-	    this.elem = document.createElement('div');
-	    this.elem.className = 'menu';
-
-	    this.elem.innerHTML = (0, _menu2.default)(options);
-
-	    this.titleElem = this.elem.querySelector('.title');
-
-	    this.titleElem.onclick = function () {
-	        return _this.elem.classList.toggle('open');
-	    };
-
-	    this.titleElem.onmousedown = function () {
-	        return alert('!!!!!!');
-	    };
+	  this.elem = document.createElement('div');
+	  this.elem.className = 'tablewrap';
+	  this.elem.innerHTML = (0, _table2.default)(options);
 	};
 
-	exports.default = Menu;
+	exports.default = Table;
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(4);
+	var jade = __webpack_require__(5);
 
 	module.exports = function template(locals) {
 	var buf = [];
 	var jade_mixins = {};
 	var jade_interp;
-	;var locals_for_with = (locals || {});(function (items, title, undefined) {
-	buf.push("<span class=\"title\">" + (jade.escape(null == (jade_interp = title) ? "" : jade_interp)) + "</span><ul class=\"list\">");
-	// iterate items
+	;var locals_for_with = (locals || {});(function (header, rows, undefined) {
+	buf.push("<h2>Webpack & Module & Jade & Styl</h2><div><table class=\"table table-hover\"><thead class=\"thead\">");
+	// iterate header
 	;(function(){
-	  var $$obj = items;
+	  var $$obj = header;
 	  if ('number' == typeof $$obj.length) {
 
-	    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
-	      var item = $$obj[$index];
+	    for (var j = 0, $$l = $$obj.length; j < $$l; j++) {
+	      var h = $$obj[j];
 
-	buf.push("<li><a" + (jade.attr("href", item.href, true, false)) + ">" + (jade.escape(null == (jade_interp = item.text) ? "" : jade_interp)) + "</a></li>");
+	buf.push("<th class=\"th\">" + (jade.escape(null == (jade_interp = h) ? "" : jade_interp)) + "</th>");
 	    }
 
 	  } else {
 	    var $$l = 0;
-	    for (var $index in $$obj) {
-	      $$l++;      var item = $$obj[$index];
+	    for (var j in $$obj) {
+	      $$l++;      var h = $$obj[j];
 
-	buf.push("<li><a" + (jade.attr("href", item.href, true, false)) + ">" + (jade.escape(null == (jade_interp = item.text) ? "" : jade_interp)) + "</a></li>");
+	buf.push("<th class=\"th\">" + (jade.escape(null == (jade_interp = h) ? "" : jade_interp)) + "</th>");
 	    }
 
 	  }
 	}).call(this);
 
-	buf.push("</ul>");}.call(this,"items" in locals_for_with?locals_for_with.items:typeof items!=="undefined"?items:undefined,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined,"undefined" in locals_for_with?locals_for_with.undefined: false?undefined:undefined));;return buf.join("");
+	buf.push("</thead><tbody>");
+	// iterate rows
+	;(function(){
+	  var $$obj = rows;
+	  if ('number' == typeof $$obj.length) {
+
+	    for (var i = 0, $$l = $$obj.length; i < $$l; i++) {
+	      var user = $$obj[i];
+
+	buf.push("<tr class=\"tr\"><td class=\"td\">" + (jade.escape(null == (jade_interp = i) ? "" : jade_interp)) + "</td><td class=\"td\">" + (jade.escape(null == (jade_interp = user.id) ? "" : jade_interp)) + "</td><td class=\"td\">" + (jade.escape(null == (jade_interp = user.ln) ? "" : jade_interp)) + "</td><td class=\"td\">" + (jade.escape(null == (jade_interp = user.fn) ? "" : jade_interp)) + "</td><td class=\"td\">" + (jade.escape(null == (jade_interp = user.age) ? "" : jade_interp)) + "</td></tr>");
+	    }
+
+	  } else {
+	    var $$l = 0;
+	    for (var i in $$obj) {
+	      $$l++;      var user = $$obj[i];
+
+	buf.push("<tr class=\"tr\"><td class=\"td\">" + (jade.escape(null == (jade_interp = i) ? "" : jade_interp)) + "</td><td class=\"td\">" + (jade.escape(null == (jade_interp = user.id) ? "" : jade_interp)) + "</td><td class=\"td\">" + (jade.escape(null == (jade_interp = user.ln) ? "" : jade_interp)) + "</td><td class=\"td\">" + (jade.escape(null == (jade_interp = user.fn) ? "" : jade_interp)) + "</td><td class=\"td\">" + (jade.escape(null == (jade_interp = user.age) ? "" : jade_interp)) + "</td></tr>");
+	    }
+
+	  }
+	}).call(this);
+
+	buf.push("</tbody></table></div>");}.call(this,"header" in locals_for_with?locals_for_with.header:typeof header!=="undefined"?header:undefined,"rows" in locals_for_with?locals_for_with.rows:typeof rows!=="undefined"?rows:undefined,"undefined" in locals_for_with?locals_for_with.undefined: false?undefined:undefined));;return buf.join("");
 	}
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -306,7 +317,7 @@ webpackJsonp([1],[
 	    throw err;
 	  }
 	  try {
-	    str = str || __webpack_require__(5).readFileSync(filename, 'utf8')
+	    str = str || __webpack_require__(6).readFileSync(filename, 'utf8')
 	  } catch (ex) {
 	    rethrow(err, null, lineno)
 	  }
@@ -338,7 +349,7 @@ webpackJsonp([1],[
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 	/* (ignored) */
