@@ -1,0 +1,17 @@
+block content
+  h2 Webpack & Module & Jade & Styl
+ div
+   table.table.table-hover
+    thead.thead
+      each h, j in header
+       th.th=h
+    tbody
+      each user, i in rows
+        tr.tr
+          td.td=i
+          td.td=user.id
+          td.td=user.ln
+          td.td=user.fn
+          td.td=user.age
+
+
