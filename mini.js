@@ -5,30 +5,14 @@ const compressor = require('node-minify');
 
 let t = Date.parse(new Date()); //milliseconds
 
-//ОЧИСТИТЬ ПАПКИ public_mini/menu
-rimraf.sync('public_mini');
-
-copydir('frontend', 'frontend_archive/'+ t +'/', function(err){
-  if(err){
-    console.log(err);
-  } else {
-    console.log("frontend_archive - ok");
-  }
-});
-
-copydir('public/menu', 'public_mini/menu', function(err){
-  if(err){
-    console.log(err);
-  } else {
-    console.log("public_mini - ok");
-  }
-});
+//ОЧИСТИТЬ ПАПКИ prodaction/menu
+rimraf.sync('prodaction');
 
 function miniJs(fn){
   compressor.minify({
   compressor: 'gcc',
   input: './public/' + fn,
-  output: 'public_mini/' + fn,
+  output: 'prodaction/' + fn,
   options: {
     compilation_level: 'WHITESPACE_ONLY',
     language: 'ECMASCRIPT6'
@@ -42,7 +26,7 @@ function miniCss(fn){
 	compressor.minify({
 	  compressor: 'clean-css',
 	  input: './public/' + fn,
-	  output: 'public_mini/' + fn,
+	  output: 'prodaction/' + fn,
 	  options: {
 	    advanced: false, // set to false to disable advanced optimizations - selector & property merging, reduction, etc. 
 	    aggressiveMerging: false // set to false to disable aggressive merging of properties. 
@@ -65,7 +49,7 @@ fs.readdir(p, function(err, items) {
         }else if(path.extname(items[i]) == '.css'){
         	miniCss(items[i])
         }else if(path.extname(items[i]) == '.html'){
-        	fs.createReadStream(p +'/index.html').pipe(fs.createWriteStream('public_mini/index.html'));
+        	fs.createReadStream(p +'/index.html').pipe(fs.createWriteStream('prodaction/index.html'));
         }
     }
 });

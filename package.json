@@ -12,7 +12,7 @@
     "timev": "webpack --profile --display-modules --display-reasons",
     "devser": "set NODE_ENV=devser&webpack-dev-server --inline --hot",
     "build": "set NODE_ENV=testser&webpack&node server.js",
-    "buildProd": "node archive-mini.js",
+    "buildProd": "node mini.js",
     "prod": "node server-prod.js"
   },
   "author": "",
@@ -43,7 +43,6 @@
     "stylus-loader": "^1.4.0",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1",
-    "webpack-obfuscator": "^0.16.0"
+    "webpack-dev-server": "^1.12.1"
   }
 }

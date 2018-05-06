@@ -1,16 +1,13 @@
 # Webpack для SPA сайта :<br />
 1. npm i : Импортировать необходимые модули.Зависимости указаны в файле package.json
-2. создать папку **frontend_archive** (эта папка включена в .gitignore, поэтому не отражается на git)
-
-ЗАГОЛОВОК HTML СТРАНИЦЫ - const titleHTML = 'ЗАГОЛОВОК';
-
-!!! ПРИ ВНЕСЕНИЕ ИЗМЕНЕНИЙ В JS ФАЙЛЫ - ПЕРЕЗАГРУЗИТЬ = npm run devser
+2. ЗАГОЛОВОК HTML СТРАНИЦЫ - const titleHTML = 'ЗАГОЛОВОК';
+3. !!! ПРИ ВНЕСЕНИЕ ИЗМЕНЕНИЙ В JS ФАЙЛЫ - ПЕРЕЗАГРУЗИТЬ = npm run devser
 
 # ЗАПУСКАТЬ ТОЛЬКО ЧЕРЕЗ npm run скрипт!
 
 # ![#c5f015](https://placehold.it/15/c5f015/000000) `npm run devser`<br/> http://localhost:8080/webpack-dev-server/ <br/>1. ЗАПУСТИТ webpack-dev-server --inline --hot
 # ![#c5f015](https://placehold.it/15/c5f015/000000) `npm run build`<br/> http://127.0.0.1:3000/ <br/> 1. В ПАПКЕ public СОЗДАСТ ФАЙЛЫ С ХЕШОМ В ИМЕНИ <br/> 2. ЗАПУСТИТ node-static
-# ![#c5f015](https://placehold.it/15/c5f015/000000) `npm run buildProd`<br/> 1. АРХИВАЦИЯ frontend В frontend_archive <br/>2. МИНИМИЗАЦИЯ css & js ФАЙЛОВ!!!
+# ![#c5f015](https://placehold.it/15/c5f015/000000) `npm run buildProd`<br/> 1. МИНИМИЗАЦИЯ css & js ФАЙЛОВ!!!
 # ![#c5f015](https://placehold.it/15/c5f015/000000) `npm run prod` <br/> 1.ЗАПУСТИТ node-static С МИНИФИЦИРОВАННЫМИ ФАЙЛАМИ
 
 scripts в package.json:<br />

@@ -1,6 +1,6 @@
 var static = require('node-static');
 var open = require("open");
-var file = new static.Server('./public_mini');
+var file = new static.Server('./prodaction');
 
 require('http').createServer(function (request, response) {
   if (!/\./.test(request.url)) {
